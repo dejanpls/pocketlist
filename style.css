@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+    color: #334e68;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    background: #006d77;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* Main Content Styling */
+main {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Button Styling */
+input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid #d9e2ec;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #006d77;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #006d77;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005960;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+li span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #334e68;
+    flex-grow: 1;
+}
+
+li button {
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 5.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+li button:hover {
+    background: #c5303f;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    input,
+    button {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    li {
+        padding: 0.8rem;
+    }
+
+    li button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
