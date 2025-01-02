@@ -3,8 +3,8 @@
     "short_name": "PocketList",
     "start_url": "/pocketlist",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#006d77",
+    "background_color": "#000000",
+    "theme_color": "#d9e2ec",
     "icons": [
         {
             "src": "/icons/icon-192x192.png",
