@@ -1,7 +1,7 @@
 {
     "name": "PocketList",
     "short_name": "PocketList",
-    "start_url": "/",
+    "start_url": "/pocketlist/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
