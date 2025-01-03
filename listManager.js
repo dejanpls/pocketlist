@@ -13,7 +13,7 @@ export function renderList() {
         li.textContent = item;
 
         const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
+        removeButton.textContent = 'Delete';
         removeButton.onclick = () => {
             list.splice(index, 1);
             saveList();
