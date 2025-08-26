@@ -27,14 +27,21 @@ export default function App() {
         </label>
 
         <label htmlFor="priority">
-          <select id="priority" name="priority">
+          <select
+            id="priority"
+            name="priority"
+            value={newTask.priority}
+            onChange={handleChange}
+          >
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
         </label>
 
-        <button type="submit">Add Task</button>
+        <button type="submit" disabled={!newTask.title}>
+          Add Task
+        </button>
       </form>
 
       {newTask.title && console.log(newTask)}
