@@ -53,6 +53,11 @@ export default function App() {
     setEditId(taskToEdit.id);
   };
 
+  const handleCancel = () => {
+    setEditId(null);
+    setNewTask(initialTask);
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -81,6 +86,12 @@ export default function App() {
         <button type="submit" disabled={!newTask.title}>
           Add Task
         </button>
+
+        {editId && (
+          <button type="button" onClick={handleCancel}>
+            Cancel
+          </button>
+        )}
       </form>
 
       {tasks.length > 0 && (
