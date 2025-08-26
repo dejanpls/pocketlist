@@ -25,6 +25,14 @@ export default function App() {
     setNewTask(initialTask);
   };
 
+  const handleCompleted = (id) => {
+    setTasks((tasks) =>
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -59,7 +67,11 @@ export default function App() {
         <ul>
           {tasks.map((task) => (
             <li key={task.id}>
-              <input type="checkbox" checked={task.completed} />
+              <input
+                type="checkbox"
+                checked={task.completed}
+                onChange={() => handleCompleted(task.id)}
+              />
               <h2>{task.title}</h2>
               <p>
                 Priority:{" "}
