@@ -33,6 +33,10 @@ export default function App() {
     );
   };
 
+  const handleDelete = (id) => {
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -77,6 +81,10 @@ export default function App() {
                 Priority:{" "}
                 {task.priority[0].toUpperCase() + task.priority.slice(1)}
               </p>
+              <button type="button" onClick={() => handleDelete(task.id)}>
+                Delete
+              </button>
+              <button type="button">Edit</button>
             </li>
           ))}
         </ul>
