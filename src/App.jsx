@@ -5,6 +5,7 @@ export default function App() {
   const [newTask, setNewTask] = useState(initialTask);
   const [tasks, setTasks] = useState([]);
   const [editId, setEditId] = useState(null);
+  const [editTask, setEditTask] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,12 +51,14 @@ export default function App() {
   const handleEdit = (id) => {
     const taskToEdit = tasks.find((task) => task.id === id);
     setNewTask({ title: taskToEdit.title, priority: taskToEdit.priority });
+    setEditTask({ title: taskToEdit.title, priority: taskToEdit.priority });
     setEditId(taskToEdit.id);
   };
 
   const handleCancel = () => {
     setEditId(null);
     setNewTask(initialTask);
+    setEditTask({});
   };
 
   return (
@@ -83,13 +86,24 @@ export default function App() {
           </select>
         </label>
 
-        <button type="submit" disabled={!newTask.title}>
-          Add Task
+        <button
+          type="submit"
+          disabled={
+            !newTask.title ||
+            (editTask &&
+              newTask.title === editTask.title &&
+              newTask.priority === editTask.priority)
+          }
+        >
+          {editId ? "Save Changes" : "Add Task"}
         </button>
 
         {editId && (
           <button type="button" onClick={handleCancel}>
-            Cancel
+            {newTask.title === editTask.title &&
+            newTask.priority === editTask.priority
+              ? "Cancel"
+              : "Discard"}
           </button>
         )}
       </form>
