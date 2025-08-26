@@ -21,6 +21,8 @@ export default function App() {
       ...tasks,
       { id: Date.now(), ...newTask, completed: false },
     ]);
+
+    setNewTask(initialTask);
   };
 
   return (
@@ -53,7 +55,20 @@ export default function App() {
         </button>
       </form>
 
-      {tasks.length > 0 && console.log(tasks)}
+      {tasks.length > 0 && (
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              <input type="checkbox" checked={task.completed} />
+              <h2>{task.title}</h2>
+              <p>
+                Priority:{" "}
+                {task.priority[0].toUpperCase() + task.priority.slice(1)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
