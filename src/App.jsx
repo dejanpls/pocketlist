@@ -14,9 +14,18 @@ export default function App() {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setTasks((tasks) => [
+      ...tasks,
+      { id: Date.now(), ...newTask, completed: false },
+    ]);
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">
           <input
             id="title"
@@ -44,7 +53,7 @@ export default function App() {
         </button>
       </form>
 
-      {newTask.title && console.log(newTask)}
+      {tasks.length > 0 && console.log(tasks)}
     </>
   );
 }
