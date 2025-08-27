@@ -122,10 +122,18 @@ export default function App() {
                 Priority:{" "}
                 {task.priority[0].toUpperCase() + task.priority.slice(1)}
               </p>
-              <button type="button" onClick={() => handleDelete(task.id)}>
+              <button
+                disabled={editId === task.id}
+                type="button"
+                onClick={() => handleDelete(task.id)}
+              >
                 Delete
               </button>
-              <button type="button" onClick={() => handleEdit(task.id)}>
+              <button
+                disabled={editId}
+                type="button"
+                onClick={() => handleEdit(task.id)}
+              >
                 Edit
               </button>
             </li>
