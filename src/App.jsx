@@ -9,6 +9,7 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
   const [editId, setEditId] = useState(null);
   const [editTask, setEditTask] = useState({});
+  const [filter, setFilter] = useState("all");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,6 +65,16 @@ export default function App() {
     setEditTask({});
   };
 
+  const FILTERS = {
+    all: (tasks) => tasks,
+    active: (tasks) => tasks.filter((task) => !task.completed),
+    done: (tasks) => tasks.filter((task) => task.completed),
+  };
+
+  const handleFilter = (e) => setFilter(e.target.value);
+
+  const getFilteredTasks = () => FILTERS[filter](tasks);
+
   return (
     <>
       <Form
@@ -79,13 +90,25 @@ export default function App() {
 
       <TaskList
         {...{
-          tasks,
+          getFilteredTasks,
           handleCompleted,
           handleDelete,
           handleEdit,
           editId,
         }}
       />
+
+      <div>
+        <button type="button" value="all" onClick={handleFilter}>
+          All
+        </button>
+        <button type="button" value="active" onClick={handleFilter}>
+          Active
+        </button>
+        <button type="button" value="done" onClick={handleFilter}>
+          Done
+        </button>
+      </div>
     </>
   );
 }
