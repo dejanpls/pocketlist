@@ -1,10 +1,10 @@
 import { useState } from "react";
 
+import { initialTask } from "./utils/initialTask.jsx";
 import Form from "./components/Form.jsx";
 import TaskList from "./components/TaskList.jsx";
 
 export default function App() {
-  const initialTask = { title: "", priority: "low" };
   const [newTask, setNewTask] = useState(initialTask);
   const [tasks, setTasks] = useState([]);
   const [editId, setEditId] = useState(null);
