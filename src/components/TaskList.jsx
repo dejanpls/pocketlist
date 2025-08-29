@@ -1,5 +1,5 @@
 export default function TaskList({
-  getFilteredTasks,
+  getProcessedTasks,
   handleCompleted,
   handleDelete,
   handleEdit,
@@ -7,9 +7,9 @@ export default function TaskList({
 }) {
   return (
     <>
-      {getFilteredTasks().length > 0 && (
+      {getProcessedTasks().length > 0 && (
         <ul>
-          {getFilteredTasks().map((task) => (
+          {getProcessedTasks().map((task) => (
             <li key={task.id}>
               <input
                 type="checkbox"

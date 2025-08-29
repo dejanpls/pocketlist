@@ -10,6 +10,9 @@ export default function App() {
   const [editId, setEditId] = useState(null);
   const [editTask, setEditTask] = useState({});
   const [filter, setFilter] = useState("all");
+  const [sort, setSort] = useState("newestFirst");
+
+  const PROPERTIES = { low: 0, medium: 1, high: 2 };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,7 +76,29 @@ export default function App() {
 
   const handleFilter = (e) => setFilter(e.target.value);
 
-  const getFilteredTasks = () => FILTERS[filter](tasks);
+  const SORTS = {
+    newestFirst: (tasks) => [...tasks].sort((a, b) => b.id - a.id),
+    oldestFirst: (tasks) => [...tasks].sort((a, b) => a.id - b.id),
+    titleAsc: (tasks) =>
+      [...tasks].sort((a, b) => a.title.localeCompare(b.title)),
+    titleDesc: (tasks) =>
+      [...tasks].sort((a, b) => b.title.localeCompare(a.title)),
+    priorityLowHigh: (tasks) =>
+      [...tasks].sort(
+        (a, b) => PROPERTIES[a.priority] - PROPERTIES[b.priority]
+      ),
+    priorityHighLow: (tasks) =>
+      [...tasks].sort(
+        (a, b) => PROPERTIES[b.priority] - PROPERTIES[a.priority]
+      ),
+  };
+
+  const handleSort = (e) => setSort(e.target.value);
+
+  const getProcessedTasks = () => {
+    const filteredTasks = FILTERS[filter](tasks);
+    return SORTS[sort](filteredTasks);
+  };
 
   return (
     <>
@@ -87,10 +112,20 @@ export default function App() {
           editId,
         }}
       />
+      <label htmlFor="sort">
+        <select id="sort" name="sort" value={sort} onChange={handleSort}>
+          <option value="newestFirst">Newest First</option>
+          <option value="oldestFirst">Oldest First</option>
+          <option value="titleAsc">Title A-Z</option>
+          <option value="titleDesc">Title Z-A</option>
+          <option value="priorityLowHigh">Priority Low-High</option>
+          <option value="priorityHighLow">Priority High-Low</option>
+        </select>
+      </label>
 
       <TaskList
         {...{
-          getFilteredTasks,
+          getProcessedTasks,
           handleCompleted,
           handleDelete,
           handleEdit,
