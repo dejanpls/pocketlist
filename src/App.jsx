@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 import { initialTask } from "./utils/initialTask.jsx";
+import { SORTS } from "./utils/sorts.js";
+import { FILTERS } from "./utils/filters.js";
+
 import Form from "./components/Form.jsx";
 import TaskList from "./components/TaskList.jsx";
 
@@ -11,8 +14,6 @@ export default function App() {
   const [editTask, setEditTask] = useState({});
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("newestFirst");
-
-  const PROPERTIES = { low: 0, medium: 1, high: 2 };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,30 +69,7 @@ export default function App() {
     setEditTask({});
   };
 
-  const FILTERS = {
-    all: (tasks) => tasks,
-    active: (tasks) => tasks.filter((task) => !task.completed),
-    done: (tasks) => tasks.filter((task) => task.completed),
-  };
-
   const handleFilter = (e) => setFilter(e.target.value);
-
-  const SORTS = {
-    newestFirst: (tasks) => [...tasks].sort((a, b) => b.id - a.id),
-    oldestFirst: (tasks) => [...tasks].sort((a, b) => a.id - b.id),
-    titleAsc: (tasks) =>
-      [...tasks].sort((a, b) => a.title.localeCompare(b.title)),
-    titleDesc: (tasks) =>
-      [...tasks].sort((a, b) => b.title.localeCompare(a.title)),
-    priorityLowHigh: (tasks) =>
-      [...tasks].sort(
-        (a, b) => PROPERTIES[a.priority] - PROPERTIES[b.priority]
-      ),
-    priorityHighLow: (tasks) =>
-      [...tasks].sort(
-        (a, b) => PROPERTIES[b.priority] - PROPERTIES[a.priority]
-      ),
-  };
 
   const handleSort = (e) => setSort(e.target.value);
 
