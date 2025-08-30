@@ -4,10 +4,7 @@ import { initialTask } from "./utils/initialTask.jsx";
 import { SORTS } from "./utils/sorts.js";
 import { FILTERS } from "./utils/filters.js";
 
-import Form from "./components/Form.jsx";
-import TaskList from "./components/TaskList.jsx";
-import SortDropdown from "./components/SortDropdown.jsx";
-import Tabs from "./components/Tabs.jsx";
+import Todo from "./components/Todo.jsx";
 
 export default function App() {
   const [newTask, setNewTask] = useState(initialTask);
@@ -89,31 +86,24 @@ export default function App() {
   };
 
   return (
-    <>
-      <Form
-        {...{
-          newTask,
-          editTask,
-          handleSubmit,
-          handleChange,
-          handleCancel,
-          editId,
-        }}
-      />
-
-      <SortDropdown {...{ handleSort }} />
-
-      <TaskList
-        {...{
-          getProcessedTasks,
-          handleCompleted,
-          handleDelete,
-          handleEdit,
-          editId,
-        }}
-      />
-
-      <Tabs {...{ handleFilter }} />
-    </>
+    <Todo
+      formData={{
+        newTask,
+        editTask,
+        handleSubmit,
+        handleChange,
+        handleCancel,
+        editId,
+      }}
+      sortData={{ handleSort }}
+      taskListData={{
+        getProcessedTasks,
+        handleCompleted,
+        handleDelete,
+        handleEdit,
+        editId,
+      }}
+      filterData={{ handleFilter }}
+    />
   );
 }
