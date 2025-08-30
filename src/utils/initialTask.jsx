@@ -1,1 +1,1 @@
-export const initialTask = { title: "", priority: "low" };
+export const initialTask = { title: "", quantity: 1, priority: "low" };

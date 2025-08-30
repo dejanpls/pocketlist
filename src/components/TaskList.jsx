@@ -17,6 +17,7 @@ export default function TaskList({
                 onChange={() => handleCompleted(task.id)}
               />
               <h2>{task.title}</h2>
+              <p>Quantity: {task.quantity}</p>
               <p>
                 Priority:{" "}
                 {task.priority[0].toUpperCase() + task.priority.slice(1)}

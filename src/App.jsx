@@ -58,8 +58,16 @@ export default function App() {
 
   const handleEdit = (id) => {
     const taskToEdit = tasks.find((task) => task.id === id);
-    setNewTask({ title: taskToEdit.title, priority: taskToEdit.priority });
-    setEditTask({ title: taskToEdit.title, priority: taskToEdit.priority });
+    setNewTask({
+      title: taskToEdit.title,
+      quantity: taskToEdit.quantity,
+      priority: taskToEdit.priority,
+    });
+    setEditTask({
+      title: taskToEdit.title,
+      quantity: taskToEdit.quantity,
+      priority: taskToEdit.priority,
+    });
     setEditId(taskToEdit.id);
   };
 

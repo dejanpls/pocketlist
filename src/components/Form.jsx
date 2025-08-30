@@ -17,6 +17,16 @@ export default function Form({
         />
       </label>
 
+      <label htmlFor="quantity">
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          value={newTask.quantity}
+          onChange={handleChange}
+        />
+      </label>
+
       <label htmlFor="priority">
         <select
           id="priority"
@@ -36,6 +46,7 @@ export default function Form({
           !newTask.title ||
           (editTask &&
             newTask.title === editTask.title &&
+            newTask.quantity === editTask.quantity &&
             newTask.priority === editTask.priority)
         }
       >
@@ -45,6 +56,7 @@ export default function Form({
       {editId && (
         <button type="button" onClick={handleCancel}>
           {newTask.title === editTask.title &&
+          newTask.quantity === editTask.quantity &&
           newTask.priority === editTask.priority
             ? "Cancel"
             : "Discard"}
