@@ -11,4 +11,6 @@ export const SORTS = {
     [...tasks].sort((a, b) => PROPERTIES[a.priority] - PROPERTIES[b.priority]),
   priorityHighLow: (tasks) =>
     [...tasks].sort((a, b) => PROPERTIES[b.priority] - PROPERTIES[a.priority]),
+  quantityAsc: (tasks) => [...tasks].sort((a, b) => a.quantity - b.quantity),
+  quantityDesc: (tasks) => [...tasks].sort((a, b) => b.quantity - a.quantity),
 };
