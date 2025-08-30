@@ -6,6 +6,8 @@ import { FILTERS } from "./utils/filters.js";
 
 import Form from "./components/Form.jsx";
 import TaskList from "./components/TaskList.jsx";
+import SortDropdown from "./components/SortDropdown.jsx";
+import Tabs from "./components/Tabs.jsx";
 
 export default function App() {
   const [newTask, setNewTask] = useState(initialTask);
@@ -98,18 +100,8 @@ export default function App() {
           editId,
         }}
       />
-      <label htmlFor="sort">
-        <select id="sort" name="sort" value={sort} onChange={handleSort}>
-          <option value="newestFirst">Newest First</option>
-          <option value="oldestFirst">Oldest First</option>
-          <option value="titleAsc">Title A-Z</option>
-          <option value="titleDesc">Title Z-A</option>
-          <option value="priorityLowHigh">Priority Low-High</option>
-          <option value="priorityHighLow">Priority High-Low</option>
-          <option value="quantityAsc">Quantity Ascending</option>
-          <option value="quantityDesc">Quantity Descending</option>
-        </select>
-      </label>
+
+      <SortDropdown {...{ handleSort }} />
 
       <TaskList
         {...{
@@ -121,17 +113,7 @@ export default function App() {
         }}
       />
 
-      <div>
-        <button type="button" value="all" onClick={handleFilter}>
-          All
-        </button>
-        <button type="button" value="active" onClick={handleFilter}>
-          Active
-        </button>
-        <button type="button" value="done" onClick={handleFilter}>
-          Done
-        </button>
-      </div>
+      <Tabs {...{ handleFilter }} />
     </>
   );
 }
