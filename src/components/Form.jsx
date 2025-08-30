@@ -20,6 +20,8 @@ export default function Form({
       <label htmlFor="quantity">
         <input
           type="number"
+          min="1"
+          max="99999"
           id="quantity"
           name="quantity"
           value={newTask.quantity}
