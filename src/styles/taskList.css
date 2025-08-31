@@ -1,0 +1,39 @@
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border: 1px solid blue;
+}
+
+.listItem .primary-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.listItem .secondary-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listItem .secondary-info-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.secondary-container .btn-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.secondary-container .btn-container button {
+  padding: 0.4rem 0.7rem;
+  background-color: white;
+  border: 1px solid black;
+}
