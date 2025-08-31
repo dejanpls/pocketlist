@@ -1,8 +1,8 @@
-export default function SortDropdown({ handleSort }) {
+export default function SortDropdown({ sort, handleSort }) {
   return (
     <>
       <label htmlFor="sort">
-        <select id="sort" name="sort" onChange={handleSort}>
+        <select id="sort" name="sort" value={sort} onChange={handleSort}>
           <option value="newestFirst">Newest First</option>
           <option value="oldestFirst">Oldest First</option>
           <option value="titleAsc">Title A-Z</option>

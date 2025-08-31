@@ -14,12 +14,26 @@ export default function App() {
   });
   const [editId, setEditId] = useState(null);
   const [editTask, setEditTask] = useState({});
-  const [filter, setFilter] = useState("all");
-  const [sort, setSort] = useState("newestFirst");
+  const [filter, setFilter] = useState(() => {
+    const savedFilter = localStorage.getItem("filter");
+    return savedFilter ? savedFilter : "all";
+  });
+  const [sort, setSort] = useState(() => {
+    const savedSort = localStorage.getItem("sort");
+    return savedSort ? savedSort : "newestFirst";
+  });
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  useEffect(() => {
+    localStorage.setItem("filter", filter);
+  }, [filter]);
+
+  useEffect(() => {
+    localStorage.setItem("sort", sort);
+  }, [sort]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -102,7 +116,7 @@ export default function App() {
         handleCancel,
         editId,
       }}
-      sortData={{ handleSort }}
+      sortData={{ sort, handleSort }}
       taskListData={{
         getProcessedTasks,
         handleCompleted,
