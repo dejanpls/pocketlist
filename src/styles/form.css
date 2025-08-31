@@ -33,6 +33,7 @@ form {
 .secondary-input-container label > select {
   padding: 0.1rem;
   font-size: 14px;
+  text-align: center;
 }
 
 .controls .btn-container {
