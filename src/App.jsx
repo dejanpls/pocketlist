@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { initialTask } from "./utils/initialTask.jsx";
 import { SORTS } from "./utils/sorts.js";
@@ -8,11 +8,18 @@ import Todo from "./components/Todo.jsx";
 
 export default function App() {
   const [newTask, setNewTask] = useState(initialTask);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
   const [editId, setEditId] = useState(null);
   const [editTask, setEditTask] = useState({});
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("newestFirst");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
