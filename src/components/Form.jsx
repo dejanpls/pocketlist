@@ -1,3 +1,5 @@
+import "../styles/form.css";
+
 export default function Form({
   newTask,
   editTask,
@@ -8,14 +10,16 @@ export default function Form({
 }) {
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="title">
-        <input
-          id="title"
-          name="title"
-          value={newTask.title}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="main-input-container">
+        <label htmlFor="title">
+          <input
+            id="title"
+            name="title"
+            value={newTask.title}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
 
       <label htmlFor="quantity">
         <input

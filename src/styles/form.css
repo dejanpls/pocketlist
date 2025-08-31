@@ -1,0 +1,15 @@
+form {
+  border: 1px solid red;
+}
+
+.main-input-container {
+  border: 1px solid blue;
+  padding: 0.5rem;
+}
+
+.main-input-container input {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+  font-size: 18px;
+}

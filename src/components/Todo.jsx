@@ -1,3 +1,5 @@
+import "../styles/styles.css";
+
 import Form from "./Form.jsx";
 import TaskList from "./TaskList.jsx";
 import SortDropdown from "./SortDropdown.jsx";
