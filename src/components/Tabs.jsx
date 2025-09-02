@@ -1,15 +1,30 @@
 import "../styles/tabs.css";
 
-export default function Tabs({ handleFilter }) {
+export default function Tabs({ filter, handleFilter }) {
   return (
     <div className="tabs">
-      <button type="button" value="all" onClick={handleFilter}>
+      <button
+        className={filter === "all" ? "selected" : ""}
+        type="button"
+        value="all"
+        onClick={handleFilter}
+      >
         All
       </button>
-      <button type="button" value="active" onClick={handleFilter}>
+      <button
+        className={filter === "active" ? "selected" : ""}
+        type="button"
+        value="active"
+        onClick={handleFilter}
+      >
         Active
       </button>
-      <button type="button" value="done" onClick={handleFilter}>
+      <button
+        className={filter === "done" ? "selected" : ""}
+        type="button"
+        value="done"
+        onClick={handleFilter}
+      >
         Done
       </button>
     </div>

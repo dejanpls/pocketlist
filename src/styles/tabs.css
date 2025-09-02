@@ -1,5 +1,6 @@
 div.tabs {
   border: 1px solid black;
+  border-radius: 0.4rem;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -9,8 +10,12 @@ div.tabs {
 }
 
 div.tabs > button {
-  background-color: white;
-  border: 1px dotted black;
+  background-color: transparent;
+  border: none;
   padding: 0.5rem;
-  width: 55px;
+  width: 70px;
+}
+
+div.tabs > button.selected {
+  font-weight: 700;
 }

@@ -124,7 +124,7 @@ export default function App() {
         handleEdit,
         editId,
       }}
-      filterData={{ handleFilter }}
+      filterData={{ filter, handleFilter }}
     />
   );
 }
