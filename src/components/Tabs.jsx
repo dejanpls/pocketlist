@@ -1,6 +1,8 @@
+import "../styles/tabs.css";
+
 export default function Tabs({ handleFilter }) {
   return (
-    <>
+    <div className="tabs">
       <button type="button" value="all" onClick={handleFilter}>
         All
       </button>
@@ -10,6 +12,6 @@ export default function Tabs({ handleFilter }) {
       <button type="button" value="done" onClick={handleFilter}>
         Done
       </button>
-    </>
+    </div>
   );
 }

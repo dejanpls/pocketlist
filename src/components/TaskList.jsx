@@ -52,7 +52,9 @@ export default function TaskList({
           ))}
         </ul>
       ) : (
-        <p>Task List Empty</p>
+        <div className="empty-task-list-container">
+          <p className="empty-task-list">Task List Empty</p>
+        </div>
       )}
     </>
   );

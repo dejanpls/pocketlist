@@ -37,3 +37,11 @@
   background-color: white;
   border: 1px solid black;
 }
+
+.empty-task-list-container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
