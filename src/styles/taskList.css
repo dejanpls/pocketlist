@@ -9,11 +9,16 @@
   flex-direction: column;
   padding: 0.5rem;
   border: 1px solid black;
+  border-radius: 0.4rem;
 }
 
 .listItem .primary-container {
   display: flex;
   gap: 0.5rem;
+}
+
+.listItem .primary-container input {
+  width: 2rem;
 }
 
 .listItem .secondary-container {
@@ -36,6 +41,7 @@
   padding: 0.4rem 0.7rem;
   background-color: white;
   border: 1px solid black;
+  border-radius: 0.4rem;
 }
 
 .empty-task-list-container {
