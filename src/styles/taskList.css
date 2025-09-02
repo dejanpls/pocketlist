@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  border: 1px solid blue;
+  border: 1px solid black;
 }
 
 .listItem .primary-container {
@@ -39,7 +39,6 @@
 }
 
 .empty-task-list-container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
