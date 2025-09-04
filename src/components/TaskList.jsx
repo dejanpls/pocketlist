@@ -33,6 +33,7 @@ export default function TaskList({
                 </div>
                 <div className="btn-container">
                   <button
+                    className="delete"
                     disabled={editId === task.id}
                     type="button"
                     onClick={() => handleDelete(task.id)}
@@ -40,6 +41,7 @@ export default function TaskList({
                     Delete
                   </button>
                   <button
+                    className="edit"
                     disabled={editId}
                     type="button"
                     onClick={() => handleEdit(task.id)}
