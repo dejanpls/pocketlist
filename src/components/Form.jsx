@@ -65,7 +65,7 @@ export default function Form({
           </button>
 
           {editId && (
-            <button type="button" onClick={handleCancel}>
+            <button type="button" className="cancel" onClick={handleCancel}>
               {newTask.title === editTask.title &&
               newTask.quantity === editTask.quantity &&
               newTask.priority === editTask.priority

@@ -56,8 +56,12 @@ form {
 }
 
 .controls .btn-container button:disabled {
-  min-width: 70px;
-  padding: 0 0.5rem;
   background-color: rgb(172, 172, 173);
   color: white;
+}
+
+.controls .btn-container button.cancel {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
