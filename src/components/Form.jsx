@@ -17,6 +17,7 @@ export default function Form({
             name="title"
             value={newTask.title}
             onChange={handleChange}
+            placeholder="e.g. Orange Juice"
           />
         </label>
       </div>
