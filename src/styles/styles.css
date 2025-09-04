@@ -5,6 +5,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  color: #50515a;
+}
+
+body {
+  background-color: rgb(249, 249, 249);
 }
 
 div#root {

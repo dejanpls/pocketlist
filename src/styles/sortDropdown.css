@@ -1,5 +1,6 @@
 .options-container {
-  border: 1px solid rgb(185, 185, 185);
+  /* border: 1px solid rgb(185, 185, 185); */
+  background-color: #edf2f4;
   border-radius: 0.4rem;
   padding: 0.5rem;
   display: flex;
