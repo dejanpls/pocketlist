@@ -49,7 +49,15 @@ form {
 .controls .btn-container button {
   min-width: 70px;
   padding: 0 0.5rem;
-  background-color: white;
-  border: 1px solid black;
+  background-color: rgb(74, 114, 227);
+  color: white;
+  border: none;
   border-radius: 0.4rem;
+}
+
+.controls .btn-container button:disabled {
+  min-width: 70px;
+  padding: 0 0.5rem;
+  background-color: rgb(172, 172, 173);
+  color: white;
 }
