@@ -19,6 +19,7 @@ div.tabs > button {
   padding: 8px;
   width: 80px;
   color: white;
+  -webkit-tap-highlight-color: transparent;
 }
 
 div.tabs > button:active {
