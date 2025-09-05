@@ -1,13 +1,13 @@
 .taskList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .listItem {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 8px;
   border-radius: 0.4rem;
   background-color: #edf2f4;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -15,11 +15,11 @@
 
 .listItem .primary-container {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
-.listItem .primary-container input {
-  width: 2rem;
+.listItem .primary-container h2 {
+  font-size: 24px;
 }
 
 .listItem .secondary-container {
@@ -30,12 +30,12 @@
 .listItem .secondary-info-container {
   display: flex;
   align-items: flex-end;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .secondary-container .btn-container {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .secondary-container .btn-container button {
