@@ -42,5 +42,6 @@ div#root {
 footer {
   display: flex;
   justify-content: center;
-  height: 40px;
+  padding-top: 24px;
+  padding-bottom: 8px;
 }
