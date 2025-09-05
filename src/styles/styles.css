@@ -45,3 +45,14 @@ footer {
   padding-top: 24px;
   padding-bottom: 8px;
 }
+
+@media (min-width: 900px) {
+  html {
+    display: flex;
+    justify-content: center;
+  }
+
+  body {
+    width: 900px;
+  }
+}
