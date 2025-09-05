@@ -21,6 +21,11 @@ div.tabs > button {
   color: white;
 }
 
+div.tabs > button:active {
+  background: inherit;
+  box-shadow: none;
+}
+
 div.tabs > button.selected {
   font-weight: 700;
 }
