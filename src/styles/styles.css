@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   padding: 0;
@@ -10,7 +10,25 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(249, 249, 249);
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  font-size: 24px;
+  font-family: "Bungee", sans-serif;
+  color: rgb(215, 66, 113);
+}
+
+header > span {
+  font-family: "Bungee", sans-serif;
+  font-size: 24px;
+  color: rgb(74, 114, 227);
 }
 
 div#root {
@@ -18,4 +36,11 @@ div#root {
   flex-direction: column;
   gap: 8px;
   margin: 8px;
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  height: 40px;
 }
