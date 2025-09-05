@@ -25,10 +25,10 @@ export default function TaskList({
 
               <div className="secondary-container">
                 <div className="secondary-info-container">
-                  <p>Quantity: {task.quantity}</p>
-                  <p>
-                    Priority:{" "}
-                    {task.priority[0].toUpperCase() + task.priority.slice(1)}
+                  <p className="quantity-text">X{task.quantity}</p>
+                  <p className={`priority-${task.priority}`}>
+                    {task.priority[0].toUpperCase() + task.priority.slice(1)}{" "}
+                    Priority
                   </p>
                 </div>
                 <div className="btn-container">
