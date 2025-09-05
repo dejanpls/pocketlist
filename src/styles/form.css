@@ -36,7 +36,6 @@ form {
 .secondary-input-container label > input,
 .secondary-input-container label > select {
   padding: 0.1rem;
-  font-size: 14px;
   text-align: center;
   border: 1px solid rgb(185, 185, 185);
   border-radius: 6px;
@@ -45,11 +44,13 @@ form {
 
 .controls .btn-container {
   display: flex;
+  align-items: flex-end;
   gap: 8px;
 }
 
 .controls .btn-container button {
-  min-width: 70px;
+  min-width: 82px;
+  height: 36px;
   padding: 0 8px;
   background-color: rgb(74, 114, 227);
   color: white;

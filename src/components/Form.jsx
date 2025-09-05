@@ -62,7 +62,7 @@ export default function Form({
                 newTask.priority === editTask.priority)
             }
           >
-            {editId ? "Save Changes" : "Add Task"}
+            {editId ? "Save" : "Add Task"}
           </button>
 
           {editId && (
