@@ -20,7 +20,9 @@ export default function TaskList({
                   checked={task.completed}
                   onChange={() => handleCompleted(task.id)}
                 />
-                <h2>{task.title}</h2>
+                <h2 className={task.completed ? "completed" : "notCompleted"}>
+                  {task.title}
+                </h2>
               </div>
 
               <div className="secondary-container">
@@ -42,7 +44,7 @@ export default function TaskList({
                   </button>
                   <button
                     className="edit"
-                    disabled={editId}
+                    disabled={editId || task.completed}
                     type="button"
                     onClick={() => handleEdit(task.id)}
                   >
